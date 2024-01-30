@@ -171,12 +171,12 @@ function removeAtivado() {
 
 var formCadastro = document.querySelector('.form-cadastro-registro');
 var codigosNomes = {
-    10003: 'Igor',
-    10004: 'Débora',
-    10005: 'Carla',
-    10006: 'Mário',
-    10007: 'Gilson',
-    10008: 'Gislaine'
+    10000038: 'Igor',
+    10000045: 'Débora',
+    10000052: 'Carla',
+    10000069: 'Mário',
+    10000076: 'Gilson',
+    10000083: 'Gislaine'
 };
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -218,7 +218,7 @@ function verificarAtualizacao(codigo) {
     const hora = horarioAtual.getHours();
 
     switch (codigo) {
-        case 10003: // Igor
+        case 10000038: // Igor
             if (diaSemana >= 1 && diaSemana <= 5) { // Segunda a Sexta
                 if (hora >= 7 && hora < 9) {
                     return "Entrada";
@@ -234,7 +234,7 @@ function verificarAtualizacao(codigo) {
             }
             break;
 
-        case 10004: // Debora
+        case 10000045: // Debora
             if (diaSemana >= 1 && diaSemana <= 5) { // Segunda a Sexta
                 if (hora >= 7 && hora < 9) {
                     return "Entrada";
@@ -250,7 +250,7 @@ function verificarAtualizacao(codigo) {
             }
             break;
 
-        case 10005: // Carla
+            case 10000052: // Carla
             if (diaSemana >= 1 && diaSemana <= 5) { // Segunda a Sexta
                 if (hora >= 9 && hora < 11) {
                     return "Entrada";
@@ -266,7 +266,7 @@ function verificarAtualizacao(codigo) {
             }
             break;
 
-            case 10006: // Mario
+            case 10000069: // Mario
             if (diaSemana >= 1 && diaSemana <= 5) { // Segunda a Sexta
                 if (hora >= 12 && hora < 14) {
                     return "Entrada";
@@ -282,7 +282,7 @@ function verificarAtualizacao(codigo) {
             }
             break;
 
-            case 10007: // Gilson
+            case 10000076: // Gilson
             if (diaSemana >= 1 && diaSemana <= 5) { // Segunda a Sexta
                 if (hora >= 14 && hora <= 16) {
                     return "Entrada";
@@ -294,7 +294,7 @@ function verificarAtualizacao(codigo) {
             }
             break;
 
-            case 10008: // Gislaine
+            case 10000083: // Gislaine
             if (diaSemana >= 1 && diaSemana <= 5) { // Segunda a Sexta
                 if (hora >= 7 && hora < 9) {
                     return "Entrada";
@@ -323,7 +323,7 @@ function verificarStatus(codigo) {
     //console.log(hora);
 
     switch (codigo) {
-        case 10003: // Igor
+        case 10000038: // Igor
             if (hora == 8 && minutos > 10 || hora > 15 && hora < 17) {
                 return '<i class="bi bi-hand-thumbs-down" style="color: red;"></i>';
             } else if ( hora < 8 && hora >= 7 ||  hora == 8 && minutos < 10 || hora <= 15 && hora > 14) {
@@ -333,7 +333,7 @@ function verificarStatus(codigo) {
             }
             break;
 
-        case 10004: // Débora
+        case 10000045: // Débora
             if (hora == 8 && minutos > 10 || hora > 15 && hora < 17) {
                 return '<i class="bi bi-hand-thumbs-down" style="color: red;"></i>';
             } else if (hora < 8 && hora >= 7|| hora == 8 && minutos < 10 || hora <= 15 && hora > 14) {
@@ -343,7 +343,7 @@ function verificarStatus(codigo) {
             }
             break;
         
-        case 10005: // Carla
+        case 10000052: // Carla
             if (hora == 10 && minutos > 3 || hora > 16 && hora < 17) {
                 return '<i class="bi bi-hand-thumbs-down" style="color: red;"></i>';
             } else if (hora < 10 && hora >= 9 || hora == 8 && minutos < 3 || hora <= 16 && hora > 15) {
@@ -353,7 +353,7 @@ function verificarStatus(codigo) {
             }
             break;
 
-        case 10006: // Mário
+        case 10000069: // Mário
             if (hora == 13 && minutos > 3 || hora > 17 && hora < 18) {
                 return '<i class="bi bi-hand-thumbs-down" style="color: red;"></i>';
             } else if (hora < 13 && hora >= 12 || hora == 13 && minutos < 3 || hora <= 17 && hora > 16) {
@@ -363,7 +363,7 @@ function verificarStatus(codigo) {
             }
             break;
 
-        case 10007: // Gilson
+        case 10000076: // Gilson
             if (hora == 15 && minutos > 3) {
                 return '<i class="bi bi-hand-thumbs-down" style="color: red;"></i>';
             } else if (hora < 15 && hora >= 14 || hora == 15 && minutos < 3) {
@@ -373,7 +373,7 @@ function verificarStatus(codigo) {
             }
             break;
 
-        case 10008: // Gislaine
+        case 10000083: // Gislaine
             if (hora == 8 && minutos > 10 || hora > 13 && hora < 14) {
                 return '<i class="bi bi-hand-thumbs-down" style="color: red;"></i>';
             } else if (hora < 8 && hora >= 7 || hora == 8 && minutos < 10 || hora <= 13 && hora > 12) {
