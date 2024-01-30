@@ -298,7 +298,7 @@ function verificarAtualizacao(codigo) {
             if (diaSemana >= 1 && diaSemana <= 5) { // Segunda a Sexta
                 if (hora >= 7 && hora < 9) {
                     return "Entrada";
-                } else if (hora >= 18 && hora <= 12) {
+                } else if (hora >= 10 && hora <= 12) {
                     return "Pausa";
                 } else if (hora >= 12 && hora <= 13) {
                     return "Retorno";
