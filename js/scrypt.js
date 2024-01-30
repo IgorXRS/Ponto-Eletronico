@@ -222,11 +222,11 @@ function verificarAtualizacao(codigo) {
             if (diaSemana >= 1 && diaSemana <= 5) { // Segunda a Sexta
                 if (hora >= 7 && hora < 9) {
                     return "Entrada";
-                } else if (hora >= 12 && hora <= 14) {
+                } else if (hora >= 12 && hora < 14) {
                     return "Pausa";
-                } else if (hora >= 14 && hora <= 15) {
+                } else if (hora >= 14 && hora < 15) {
                     return "Retorno";
-                } else if (hora >= 17 && hora <= 19) {
+                } else if (hora >= 17 && hora < 19) {
                     return "Saida";
                 } else {
                     return "Anomalia";
@@ -238,11 +238,11 @@ function verificarAtualizacao(codigo) {
             if (diaSemana >= 1 && diaSemana <= 5) { // Segunda a Sexta
                 if (hora >= 7 && hora < 9) {
                     return "Entrada";
-                } else if (hora >= 12 && hora <= 14) {
+                } else if (hora >= 12 && hora < 14) {
                     return "Pausa";
-                } else if (hora >= 14 && hora <= 15) {
+                } else if (hora >= 14 && hora < 15) {
                     return "Retorno";
-                } else if (hora >= 17 && hora <= 19) {
+                } else if (hora >= 17 && hora < 19) {
                     return "Saida";
                 } else {
                     return "Anomalia";
@@ -254,11 +254,11 @@ function verificarAtualizacao(codigo) {
             if (diaSemana >= 1 && diaSemana <= 5) { // Segunda a Sexta
                 if (hora >= 9 && hora < 11) {
                     return "Entrada";
-                } else if (hora >= 13 && hora <= 15) {
+                } else if (hora >= 13 && hora < 15) {
                     return "Pausa";
-                } else if (hora >= 16 && hora <= 17) {
+                } else if (hora >= 16 && hora < 17) {
                     return "Retorno";
-                } else if (hora >= 19 && hora <= 21) {
+                } else if (hora >= 19 && hora < 21) {
                     return "Saida";
                 } else {
                     return "Anomalia";
@@ -270,11 +270,11 @@ function verificarAtualizacao(codigo) {
             if (diaSemana >= 1 && diaSemana <= 5) { // Segunda a Sexta
                 if (hora >= 12 && hora < 14) {
                     return "Entrada";
-                } else if (hora >= 15 && hora <= 17) {
+                } else if (hora >= 15 && hora < 16) {
                     return "Pausa";
-                } else if (hora >= 16 && hora <= 17) {
+                } else if (hora >= 16 && hora < 18) {
                     return "Retorno";
-                } else if (hora >= 21 && hora <= 23) {
+                } else if (hora >= 21 && hora < 23) {
                     return "Saida";
                 } else {
                     return "Anomalia";
@@ -298,11 +298,11 @@ function verificarAtualizacao(codigo) {
             if (diaSemana >= 1 && diaSemana <= 5) { // Segunda a Sexta
                 if (hora >= 7 && hora < 9) {
                     return "Entrada";
-                } else if (hora >= 10 && hora <= 12) {
+                } else if (hora >= 10 && hora < 12) {
                     return "Pausa";
                 } else if (hora >= 12 && hora <= 13) {
                     return "Retorno";
-                } else if (hora >= 17 && hora <= 19) {
+                } else if (hora >= 17 && hora < 19) {
                     return "Saida";
                 } else {
                     return "Anomalia";
