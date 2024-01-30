@@ -71,13 +71,14 @@ if(val){
         list.innerHTML = "";
         let registros = data.docs;
         registros = registros.sort(function(a,b){
-            if(a.data().horario < b.data().horario)
+            if(a.data().horario > b.data().horario)
                 return -1;
             else
                 return +1;
             })
         registros.map((val)=>{
             const horarioFormatado = new Date(val.data().horario).toLocaleString();
+            console.log(val.data().registro)
         
             list.innerHTML+=`<li> 
             <div class="simplesContainer">
@@ -219,7 +220,7 @@ function verificarAtualizacao(codigo) {
     switch (codigo) {
         case 10003: // Igor
             if (diaSemana >= 1 && diaSemana <= 5) { // Segunda a Sexta
-                if (hora >= 7 && hora <= 8) {
+                if (hora >= 7 && hora < 9) {
                     return "Entrada";
                 } else if (hora >= 12 && hora <= 14) {
                     return "Pausa";
@@ -235,7 +236,7 @@ function verificarAtualizacao(codigo) {
 
         case 10004: // Debora
             if (diaSemana >= 1 && diaSemana <= 5) { // Segunda a Sexta
-                if (hora >= 7 && hora <= 8) {
+                if (hora >= 7 && hora < 9) {
                     return "Entrada";
                 } else if (hora >= 12 && hora <= 14) {
                     return "Pausa";
@@ -251,7 +252,7 @@ function verificarAtualizacao(codigo) {
 
         case 10005: // Carla
             if (diaSemana >= 1 && diaSemana <= 5) { // Segunda a Sexta
-                if (hora >= 9 && hora <= 10) {
+                if (hora >= 9 && hora < 11) {
                     return "Entrada";
                 } else if (hora >= 13 && hora <= 15) {
                     return "Pausa";
@@ -267,7 +268,7 @@ function verificarAtualizacao(codigo) {
 
             case 10006: // Mario
             if (diaSemana >= 1 && diaSemana <= 5) { // Segunda a Sexta
-                if (hora >= 12 && hora <= 13) {
+                if (hora >= 12 && hora < 14) {
                     return "Entrada";
                 } else if (hora >= 15 && hora <= 17) {
                     return "Pausa";
@@ -283,7 +284,7 @@ function verificarAtualizacao(codigo) {
 
             case 10007: // Gilson
             if (diaSemana >= 1 && diaSemana <= 5) { // Segunda a Sexta
-                if (hora >= 14 && hora <= 15) {
+                if (hora >= 14 && hora <= 16) {
                     return "Entrada";
                 }  else if (hora >= 21 && hora <= 23) {
                     return "Saida";
@@ -295,9 +296,9 @@ function verificarAtualizacao(codigo) {
 
             case 10008: // Gislaine
             if (diaSemana >= 1 && diaSemana <= 5) { // Segunda a Sexta
-                if (hora >= 7 && hora <= 8) {
+                if (hora >= 7 && hora < 9) {
                     return "Entrada";
-                } else if (hora >= 10 && hora <= 12) {
+                } else if (hora >= 18 && hora <= 12) {
                     return "Pausa";
                 } else if (hora >= 12 && hora <= 13) {
                     return "Retorno";
@@ -317,58 +318,70 @@ function verificarAtualizacao(codigo) {
 function verificarStatus(codigo) {
     const horarioAtual = new Date();
     const hora = horarioAtual.getHours();
+    const minutos = horarioAtual.getMinutes();
+    //console.log(minutos);
+    //console.log(hora);
 
     switch (codigo) {
         case 10003: // Igor
-            if (hora > 8 || hora < 10 && hora > 15 || hora < 17) {
+            if (hora == 8 && minutos > 10 || hora > 15 && hora < 17) {
                 return '<i class="bi bi-hand-thumbs-down" style="color: red;"></i>';
-            } else if (hora < 8 || hora > 7 && hora < 15 || hora > 14) {
+            } else if ( hora < 8 && hora >= 7 ||  hora == 8 && minutos < 10 || hora <= 15 && hora > 14) {
                 return '<i class="bi bi-hand-thumbs-up" style="color: green;"></i>';
+            } else if( hora > 7) {
+                return '<i class="bi bi-emoji-laughing" style="color: yellow;"></i>';
             }
             break;
 
         case 10004: // Débora
-            if (hora > 8 || hora < 10 && hora > 15 || hora < 17) {
+            if (hora == 8 && minutos > 10 || hora > 15 && hora < 17) {
                 return '<i class="bi bi-hand-thumbs-down" style="color: red;"></i>';
-            } else if (hora < 8 || hora > 7 && hora < 15 || hora > 14) {
+            } else if (hora < 8 && hora >= 7|| hora == 8 && minutos < 10 || hora <= 15 && hora > 14) {
                 return '<i class="bi bi-hand-thumbs-up" style="color: green;"></i>';
+            } else if( hora > 7) {
+                return '<i class="bi bi-emoji-laughing" style="color: yellow;"></i>';
             }
             break;
         
         case 10005: // Carla
-            if (hora > 10 || hora < 12 && hora > 14 || hora < 16) {
+            if (hora == 10 && minutos > 3 || hora > 16 && hora < 17) {
                 return '<i class="bi bi-hand-thumbs-down" style="color: red;"></i>';
-            } else if (hora < 10 || hora > 8 && hora < 16 || hora > 15) {
+            } else if (hora < 10 && hora >= 9 || hora == 8 && minutos < 3 || hora <= 16 && hora > 15) {
                 return '<i class="bi bi-hand-thumbs-up" style="color: green;"></i>';
+            } else if( hora > 7) {
+                return '<i class="bi bi-emoji-laughing" style="color: yellow;"></i>';
             }
             break;
 
         case 10006: // Mário
-            if (hora > 13 || hora < 14 && hora > 17 || hora < 18) {
+            if (hora == 13 && minutos > 3 || hora > 17 && hora < 18) {
                 return '<i class="bi bi-hand-thumbs-down" style="color: red;"></i>';
-            } else if (hora < 13 || hora > 12 && hora < 17 || hora > 16) {
+            } else if (hora < 13 && hora >= 12 || hora == 13 && minutos < 3 || hora <= 17 && hora > 16) {
                 return '<i class="bi bi-hand-thumbs-up" style="color: green;"></i>';
+            } else if( hora > 7) {
+                return '<i class="bi bi-emoji-laughing" style="color: yellow;"></i>';
             }
             break;
 
         case 10007: // Gilson
-            if (hora > 15 || hora < 16) {
+            if (hora == 15 && minutos > 3) {
                 return '<i class="bi bi-hand-thumbs-down" style="color: red;"></i>';
-            } else if (hora < 15 || hora > 13) {
+            } else if (hora < 15 && hora >= 14 || hora == 15 && minutos < 3) {
                 return '<i class="bi bi-hand-thumbs-up" style="color: green;"></i>';
+            } else if( hora > 7) {
+                return '<i class="bi bi-emoji-laughing" style="color: yellow;"></i>';
             }
             break;
 
         case 10008: // Gislaine
-            if (hora > 8 || hora < 10 && hora > 13 || hora < 14) {
+            if (hora == 8 && minutos > 10 || hora > 13 && hora < 14) {
                 return '<i class="bi bi-hand-thumbs-down" style="color: red;"></i>';
-            } else if (hora < 8 || hora > 7 && hora < 13 || hora > 12) {
+            } else if (hora < 8 && hora >= 7 || hora == 8 && minutos < 10 || hora <= 13 && hora > 12) {
                 return '<i class="bi bi-hand-thumbs-up" style="color: green;"></i>';
+            } else if( hora > 7) {
+                return '<i class="bi bi-emoji-laughing" style="color: yellow;"></i>';
             }
             break;
-
-
-        // Adicionar casos para outros funcionários conforme necessário
 
         default:
             return null;
