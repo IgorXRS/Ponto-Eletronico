@@ -285,6 +285,12 @@ background-repeat: no-repeat;
     margin-left: 68px;
 }
 
+.pesquisar > input{
+    padding: 8px;
+    border-radius: 5px;
+    border: 0;
+}
+
 ::-webkit-scrollbar-track {
     background: var(--corDark);
     border-radius: 20px;
