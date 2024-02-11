@@ -224,7 +224,7 @@ function verificarAtualizacao(codigo) {
                     return "Entrada";
                 } else if (hora >= 12 && hora < 14) {
                     return "Pausa";
-                } else if (hora >= 14 && hora < 15) {
+                } else if (hora >= 14 && hora <= 15) {
                     return "Retorno";
                 } else if (hora >= 17 && hora < 19) {
                     return "Saida";
@@ -238,9 +238,9 @@ function verificarAtualizacao(codigo) {
             if (diaSemana >= 1 && diaSemana <= 5) { // Segunda a Sexta
                 if (hora >= 7 && hora < 9) {
                     return "Entrada";
-                } else if (hora >= 12 && hora < 14) {
+                } else if (hora >= 10 && hora < 14) {
                     return "Pausa";
-                } else if (hora >= 14 && hora < 15) {
+                } else if (hora >= 14 && hora <= 15) {
                     return "Retorno";
                 } else if (hora >= 17 && hora < 19) {
                     return "Saida";
@@ -254,9 +254,9 @@ function verificarAtualizacao(codigo) {
             if (diaSemana >= 1 && diaSemana <= 5) { // Segunda a Sexta
                 if (hora >= 9 && hora < 11) {
                     return "Entrada";
-                } else if (hora >= 13 && hora < 15) {
+                } else if (hora >= 12 && hora < 14) {
                     return "Pausa";
-                } else if (hora >= 16 && hora < 17) {
+                } else if (hora >= 14 && hora < 17) {
                     return "Retorno";
                 } else if (hora >= 19 && hora < 21) {
                     return "Saida";
@@ -302,7 +302,7 @@ function verificarAtualizacao(codigo) {
                     return "Pausa";
                 } else if (hora >= 12 && hora <= 13) {
                     return "Retorno";
-                } else if (hora >= 17 && hora < 19) {
+                } else if (hora >= 16 && hora < 19) {
                     return "Saida";
                 } else {
                     return "Anomalia";
@@ -346,7 +346,7 @@ function verificarStatus(codigo) {
         case 10000052: // Carla
             if (hora == 10 && minutos > 3 || hora > 16 && hora < 17) {
                 return '<i class="bi bi-hand-thumbs-down" style="color: red;"></i>';
-            } else if (hora < 10 && hora >= 9 || hora == 8 && minutos < 3 || hora <= 16 && hora > 15) {
+            } else if (hora < 10 && hora >= 9 || hora == 9 && minutos < 5 || hora <= 16 && hora > 14) {
                 return '<i class="bi bi-hand-thumbs-up" style="color: green;"></i>';
             } else if( hora > 7) {
                 return '<i class="bi bi-emoji-laughing" style="color: yellow;"></i>';
@@ -354,9 +354,9 @@ function verificarStatus(codigo) {
             break;
 
         case 10000069: // Mário
-            if (hora == 13 && minutos > 3 || hora > 17 && hora < 18) {
+            if (hora == 13 && minutos > 5 || hora > 17 && hora < 18) {
                 return '<i class="bi bi-hand-thumbs-down" style="color: red;"></i>';
-            } else if (hora < 13 && hora >= 12 || hora == 13 && minutos < 3 || hora <= 17 && hora > 16) {
+            } else if (hora < 13 && hora >= 12 || hora == 13 && minutos < 5 || hora <= 17 && hora >= 16) {
                 return '<i class="bi bi-hand-thumbs-up" style="color: green;"></i>';
             } else if( hora > 7) {
                 return '<i class="bi bi-emoji-laughing" style="color: yellow;"></i>';
@@ -364,9 +364,9 @@ function verificarStatus(codigo) {
             break;
 
         case 10000076: // Gilson
-            if (hora == 15 && minutos > 3) {
+            if (hora == 15 && minutos > 5) {
                 return '<i class="bi bi-hand-thumbs-down" style="color: red;"></i>';
-            } else if (hora < 15 && hora >= 14 || hora == 15 && minutos < 3) {
+            } else if (hora < 15 && hora >= 14 || hora == 15 && minutos < 5) {
                 return '<i class="bi bi-hand-thumbs-up" style="color: green;"></i>';
             } else if( hora > 7) {
                 return '<i class="bi bi-emoji-laughing" style="color: yellow;"></i>';
